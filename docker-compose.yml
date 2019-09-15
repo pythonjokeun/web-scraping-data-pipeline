@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  pg_scraper:
+    image: postgres
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres/scraper:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=scraper
+
+  pg_etl:
+    image: postgres
+    ports:
+      - 5434:5432
+    volumes:
+      - ./postgres/etl:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=etl
+
+  scraper:
+    build:
+      context: ./
+      dockerfile: scraper/Dockerfile
+    depends_on:
+      - pg_scraper
+    environment:
+      - REQUEST_URL="https://219wx3mpv4-dsn.algolia.net/1/indexes/*/queries?x-algolia-application-id=219WX3MPV4&x-algolia-api-key=b528008a75dc1c4402bfe0d8db8b3f8e"
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_HOST=pg_scraper
+      - DB_NAME=scraper
+
+  etl:
+    build:
+      context: ./
+      dockerfile: etl/Dockerfile
+    depends_on:
+      - scraper
+      - pg_scraper
+      - pg_etl
+    environment:
+      - DB_SCRAPER_URI=postgres://user:password@pg_scraper/scraper
+      - DB_ETL_URI=postgres://user:password@pg_etl/etl
