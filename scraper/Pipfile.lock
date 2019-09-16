@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3e9a3f92efe66cb957a8f93a6e3bdb2e918d8149d39d026ba67f775c786c7b56"
+            "sha256": "c20a8174ffeee00a5507769b5174c7dfd5244bf8be56c357c51457b02a367137"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7"
+            "python_version": "3.6"
         },
         "sources": [
             {
@@ -44,6 +44,13 @@
             ],
             "index": "pypi",
             "version": "==0.2.1"
+        },
+        "huey": {
+            "hashes": [
+                "sha256:295593a933af3880bcc85d9b6a2fe68dacc5238215c57ac47c4cca7e2df406f6"
+            ],
+            "index": "pypi",
+            "version": "==2.1.2"
         },
         "idna": {
             "hashes": [
@@ -91,6 +98,14 @@
             ],
             "version": "==2019.2"
         },
+        "redis": {
+            "hashes": [
+                "sha256:98a22fb750c9b9bb46e75e945dc3f61d0ab30d06117cbb21ff9cd1d315fedd3b",
+                "sha256:c504251769031b0dd7dd5cf786050a6050197c6de0d37778c80c08cb04ae8275"
+            ],
+            "index": "pypi",
+            "version": "==3.3.8"
+        },
         "requests": {
             "hashes": [
                 "sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4",
@@ -105,6 +120,14 @@
                 "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
             ],
             "version": "==1.12.0"
+        },
+        "tenacity": {
+            "hashes": [
+                "sha256:6a7511a59145c2e319b7d04ddd93c12d48cc3d3c8fa42c2846d33a620ee91f57",
+                "sha256:a4eb168dbf55ed2cae27e7c6b2bd48ab54dabaf294177d998330cf59f294c112"
+            ],
+            "index": "pypi",
+            "version": "==5.1.1"
         },
         "termcolor": {
             "hashes": [
@@ -182,10 +205,10 @@
         },
         "jupyter-client": {
             "hashes": [
-                "sha256:4274f2eef4265bfd00216f44993aa50d890a1abe55e414c817128cf0338ae66a",
-                "sha256:4c274aaa3d87b83fa6c6853463f54b8bbff137aeb71e65896ab111c17a62ae63"
+                "sha256:6a6d415c62179728f6d9295b37356d8f6833e9e01c2b6e1901dc555571f57b21",
+                "sha256:f406f214f9daa92be110d5b83d62f3451ffc73d3522db7350f0554683533ab18"
             ],
-            "version": "==5.3.2"
+            "version": "==5.3.3"
         },
         "jupyter-core": {
             "hashes": [

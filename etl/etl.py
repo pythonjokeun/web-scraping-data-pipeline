@@ -66,23 +66,16 @@ def save_result(data, table_name):
 def main(cron="*/5 * * * *"):
     """Run."""
 
-    def run(sched=None):
-        with prefect.Flow("ETL Pipeline", schedule=sched) as flow:
-
-            skills_popularity = compute_skills_popularity()
-            save_result(skills_popularity, "skills_popularity")
-
-            most_active_city = compute_most_active_city()
-            save_result(most_active_city, "most_active_city")
-
-        flow.run()
-
-    # Run at start
-    run()
-
-    # Run scheduled
     schedule = prefect.schedules.CronSchedule(cron)
-    run(schedule)
+    with prefect.Flow("ETL Pipeline", schedule=schedule) as flow:
+
+        skills_popularity = compute_skills_popularity()
+        save_result(skills_popularity, "skills_popularity")
+
+        most_active_city = compute_most_active_city()
+        save_result(most_active_city, "most_active_city")
+
+    flow.run()
 
 
 if __name__ == "__main__":

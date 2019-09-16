@@ -1,3 +1,5 @@
 .envrc
 notebook.py
 dev
+docker-compose-local.yml
+.python-version

@@ -13,12 +13,12 @@ RUN install_clean \
   python3-dev \
   libpq-dev
 
-# Setup
-COPY . /etl
-WORKDIR /etl
-RUN pipenv install
-
 # Install Supervisor
 RUN install_clean supervisor
 
-ENTRYPOINT ["supervisord", "-c", "supervisor.conf"]
+# Setup
+COPY . /scraper
+WORKDIR /scraper
+RUN pipenv install
+
+CMD supervisord -c docker/scheduler/supervisor-scheduler.conf

@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f83c82e84d77ac1cce915781270c50b1927ba074e3a816c8040f5df76cd0e5df"
+            "sha256": "51d30de139b1934d6e05782f3c9d777511670b9a295667939433e987442a1d3f"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7"
+            "python_version": "3.6"
         },
         "sources": [
             {
@@ -110,10 +110,10 @@
         },
         "marshmallow": {
             "hashes": [
-                "sha256:65bdcf66dd338aee9104eaae209ac970c56d41f2ae77778596c32af59fdfaa49",
-                "sha256:c1e78710709733a553deff59ba90d72677684a32f5a998b68c44e67e3876f5cb"
+                "sha256:afec49590bae715f6365ccc777e457b2811c00eacea0a6130f3155efd94dc363",
+                "sha256:d89fd236e8fabf5808b6d7c344303fb308ba56891698ee7654cf7ff9f56ec4fc"
             ],
-            "version": "==3.1.0"
+            "version": "==3.1.1"
         },
         "marshmallow-oneofschema": {
             "hashes": [
