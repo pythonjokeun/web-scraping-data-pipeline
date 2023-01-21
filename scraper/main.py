@@ -24,10 +24,9 @@ def main(cron="*/5 * * * *"):
             temp = fetch(exclude)
             if not temp:
                 break
-            else:
-                result += temp
-                exclude += [x["objectID"] for x in temp]
-                count += 1
+            result += temp
+            exclude += [x["objectID"] for x in temp]
+            count += 1
 
         logger.info(f"Got {len(result)} new data.")
 
